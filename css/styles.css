@@ -90,3 +90,24 @@ h1 { max-width: 650px; margin-bottom: 27px; font-size: clamp(48px, 5.3vw, 75px);
 @media (max-width: 390px) { .container { width: min(calc(100% - 28px), var(--container)); }.hero-actions { display: grid; }.hero-interface { transform: scale(.76); margin-bottom: -87px; }.process-step { padding: 20px; }.process-step h3 { font-size: 17px; }.process-step p { font-size: 11px; }.conversion-content .button { width: 100%; }.footer-top { grid-template-columns: 1fr; }.footer-top > p { grid-column: span 1; }.footer-top nav { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1440px) { :root { --container: 1240px; }.hero { min-height: 850px; }.hero-layout { gap: 85px; }.interface-panel { width: 450px; }.hero-interface { min-height: 540px; }.section { padding: 142px 0; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }.reveal { opacity: 1; transform: none; } }
+
+/* La foto real y los enlaces de contacto sustituyen elementos de demostración. */
+.founder-portrait { overflow: hidden; }
+.founder-portrait img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: 50% 23%; }
+.contact-options { align-content: start; gap: 14px; }
+.contact-options > p { margin: 0 0 6px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.contact-options > .button { width: 100%; justify-content: space-between; text-align: left; }
+.contact-options .contact-hint { margin: 3px 0 0; color: #748299; font-size: 11px; }
+.case-stack .text-action { margin-top: 7px; }
+
+/* Contraste del menú mientras se superpone al inicio oscuro. */
+.site-header:not(.is-scrolled) .brand { color: var(--white); }
+.site-header:not(.is-scrolled) .brand-symbol { color: var(--ink); background: #b5bfff; }
+.site-header:not(.is-scrolled) .brand-accent { color: #b5bfff; }
+.site-header:not(.is-scrolled) .site-nav { color: #e4e9f7; }
+.site-header:not(.is-scrolled) .nav-button { color: #1e2c73; background: #b5bfff; }
+.site-header:not(.is-scrolled) .menu-toggle span { background: var(--white); }
+@media (max-width: 700px) {
+  .site-header:not(.is-scrolled) .site-nav { color: #425067; }
+  .site-header:not(.is-scrolled) .nav-button { color: var(--white); background: var(--ink); }
+}

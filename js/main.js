@@ -45,26 +45,3 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
 
   revealElements.forEach((element) => observer.observe(element));
 }
-
-// Validación de interfaz. Para recibir formularios en producción, conecta este form a un endpoint o proveedor.
-const form = document.querySelector("[data-contact-form]");
-const formStatus = document.querySelector("[data-form-status]");
-
-form?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const requiredFields = [...form.querySelectorAll("[required]")];
-  const invalidField = requiredFields.find((field) => !field.value.trim() || !field.checkValidity());
-
-  requiredFields.forEach((field) => field.setAttribute("aria-invalid", String(field === invalidField)));
-
-  if (invalidField) {
-    formStatus.textContent = "Completa los campos obligatorios para solicitar tu consulta.";
-    formStatus.classList.add("is-error");
-    invalidField.focus();
-    return;
-  }
-
-  formStatus.textContent = "Gracias. Tu consulta está lista para ser enviada a Nexora Digital.";
-  formStatus.classList.remove("is-error");
-  form.reset();
-});
